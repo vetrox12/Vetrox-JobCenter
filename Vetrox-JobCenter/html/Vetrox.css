@@ -1,0 +1,382 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:wght@300&family=Vazirmatn:wght@200&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap");
+
+:root {
+  --Body-color: rgba(19, 3, 28, 0.928);  /*          لون الخلفية الرئيسية يفضل تخليها نفس الشفافية بس عدل على الون          */
+  --main-color: rgb(137, 70, 232);       /*     الوان البتنات او الازرار     */
+  --Hover-Color: rgb(109, 53, 189);      /*     الهوفر او اذا حط الماوس على الزر وش يتغير لي اي لون المفروض يكون اغمق من الي الون الي فوق بشوي     */
+}
+
+* {
+    font-family: 'Vazirmatn', sans-serif;
+    cursor: default;
+}
+
+body.ltr *:not(.fa, .fa-solid, .fa-lg) {
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: var(--Body-color);
+}
+
+body.ltr {
+    direction: ltr;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #2c2f31;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #64676b;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #818489;
+}
+
+*:focus {
+  outline: none;
+}
+
+::selection {
+  background-color: transparent;
+}
+
+.BackGround {
+  position: absolute;
+  height: 55rem;
+  width: 79rem;
+  left: 50%;
+  top: 50%;
+  border-radius: 6px; 
+  transform: translate(-50%, -50%);
+  background-color: #3f464642;
+  overflow: hidden;
+}
+
+.Exit {
+  z-index: 121219279172198721987;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;   
+  text-align: center;
+  height: 41px;
+  width: 41px;
+  left: 2.4rem;
+  scale: 0.9;
+  top: 2rem;
+  color: rgb(183, 183, 183);
+  border-radius: 5px;
+  background-color: #3f46462a;
+  font-size: 0.4;
+  box-shadow: 0 0 0px var(--main-color);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.ltr .Exit {
+    left: auto;
+    right: 2.4rem;
+}
+
+.Exit:hover {
+  background-color: var(--main-color);
+  box-shadow: 0 0 10px var(--main-color);
+}
+
+.IconForExit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.TitleOfBackground {
+    position: absolute;
+    font-weight: bolder;
+    width: 322px;
+    color: rgb(206, 206, 206);
+    font-size: 28px;
+    left: 63rem;
+    top: 2rem;
+}
+
+body.ltr .TitleOfBackground {
+    left: 2rem;
+    top: 2rem;
+    right: auto;
+}
+
+.AllJobs {
+  position: absolute;
+  height: 45.5rem;
+  overflow-y: auto;
+  width: 24rem;
+  left: 57.5rem;
+  top: 8.1rem;
+  font-size: 19px;
+  color: rgb(167, 167, 167);
+}
+
+body.ltr .AllJobs {
+    left: 2rem;
+    right: auto;
+}
+
+.JobLabel {
+  position: relative;
+  background-color: #3f46462a;
+  display: flex;
+  align-items: center;
+  height: 3.3rem;
+  max-height: 3.2rem;
+  width: 17.5rem;
+  left: 35px;
+  margin-top: 8px;
+  border-radius: 5px;
+  font-weight: bolder;
+  transition-duration: 1s ease;
+}
+
+body.ltr .JobLabel {
+    width: 19.5rem;
+    left: auto;
+    right: 35px;
+    font-size: 13px;
+}
+
+.text {
+  position: absolute;
+  text-align: right;
+  height: 33px;
+  width: 13.2rem;
+  left: 7px;
+  top: 13px;
+}
+
+body.ltr .text {
+    left: auto;
+    right: 15px;
+    top: 16px;
+    text-align: left;
+}
+
+.icon {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 26%;
+  left: 73%;
+  border-radius: 0px;
+  scale: 1.2;
+
+}
+
+body.ltr .icon {
+    left: 8%;
+    right: auto;
+    scale: 1.6;
+}
+
+.hoverJobLabel {
+  position: absolute;
+  display: flex;
+  left: 98.5%;
+  width: 1.8%;
+  height: 100%;
+  opacity: 0;
+  z-index: 111;
+  background-color: var(--main-color);
+  box-shadow: 0px 0 18px 0px var(--main-color);
+  transition-duration: 0.2s;
+  transition: opacity 0.4s ease, box-shadow 0.1s ease;
+}
+
+body.ltr .hoverJobLabel {
+  box-shadow: 3px 0 18px 0px var(--main-color);
+    left: auto;
+    right: 87.3%;
+}
+
+.JobLabel:hover .hoverJobLabel {
+  box-shadow: -3px 0 18px 0px var(--main-color);
+  opacity: 1;
+}
+
+body.ltr .JobLabel:hover .hoverJobLabel {
+  box-shadow: 3px 0 18px 0px var(--main-color);
+  opacity: 1;
+}
+
+.BackgroudForJob {
+  position: fixed;
+  display: none;
+  z-index: 1212121212;
+  background-color: #3f46462a;
+  left: 2.5rem;
+  top: 8.6rem;
+  height: 73.5%;
+  width: 71%;
+  overflow: hidden;
+}
+
+body.ltr .BackgroudForJob {
+    left: auto;
+    right: 2.5rem;
+}
+
+.JobImage {
+  position: fixed;
+  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;   
+  text-align: center;
+  top: 8.5rem;
+  height: 50%;
+  width: 71%;
+  scale: 0.98;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+body.ltr .JobImage {
+    left: auto;
+    right: 1rem;
+    top: 9.9rem;
+    width: calc(100% - 19.8rem);
+    height: auto;
+    max-height: 50%;
+    object-fit: cover;
+}
+
+#JobImageLink {
+  object-fit: cover;
+  display: block;
+  width: 855px;
+  height: 385px;
+  border-radius: 14px;
+}
+
+.JobButtons {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;   
+  text-align: center;
+  height: 206px;
+  width: 260px;
+  left: 5.5%;
+  top: 62.9%;
+  border-radius: 8px;
+  background-color: #3f46462a;
+  gap: 10px;
+}
+
+body.ltr .JobButtons {
+    left: auto;
+    right: 5.5%;
+}
+
+.button {
+  font-size: 16px;
+  width: 160px;
+  padding: 6px 15px;
+  background-color: #3f464641;
+  border-radius: 3px;
+  text-align: center;
+  transition: 0.3s ease-in-out;
+  font-weight: 500;
+  color: white;
+}
+
+.TakeTheJob {
+  background-color: var(--main-color);
+  box-shadow: 0 0 10px var(--main-color);
+}
+
+.TakeTheJob:hover {
+  background-color: var(--Hover-Color);
+}
+
+.GpsTheJob:hover {
+  background-color: #262b2b41;
+}
+
+.Bio {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  direction: rtl;
+  height: 206px;
+  width: 570px;
+  left: 26.8%;
+  top: 62.9%;
+  border-radius: 3px;
+  overflow: hidden;
+  background-color: #3f46462a;
+}
+
+body.ltr .Bio {
+    left: auto;
+    right: 26.8%;
+}
+
+.TitleOfBioJob {
+  position: absolute;
+  right: 25px;
+  top: 17px;
+  font-size: 22px;
+  font-weight: bold;
+  color: rgb(207, 207, 207);
+}
+
+body.ltr .TitleOfBioJob {
+    left: 25px;
+    right: auto;
+}
+
+.TextOfBioJob {
+  position: absolute;
+  direction: rtl;
+  overflow: hidden;
+  overflow-y: auto;
+  text-align: right;
+  white-space: normal;
+  word-wrap: break-word;
+  font-weight: 500;
+  height: 130px;
+  top: 55px;
+  right: 25px;
+  width: 520px;
+  font-size: 19px;
+}
+
+body.ltr .TextOfBioJob {
+    left: 25px;
+    font-size: 15px;
+    font-weight: 400;
+    right: auto;
+    text-align: left;
+    direction: ltr;
+}
+
+.JobLabel:hover .hoverJobLabel,
+.hoverJobLabel.active {
+  box-shadow: -3px 0 18px 0px var(--main-color);
+  opacity: 1;
+}
+
+/* Vetrox https://discord.gg/jc3bxNTD9Y */
